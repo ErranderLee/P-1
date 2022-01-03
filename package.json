@@ -1,0 +1,32 @@
+{
+  "name": "p-1",
+  "version": "1.0.0",
+  "description": "HoyongLee",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon app"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ErranderLee/P-1.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ErranderLee/P-1/issues"
+  },
+  "homepage": "https://github.com/ErranderLee/P-1#readme",
+  "devDependencies": {
+    "nodemon": "^2.0.15"
+  },
+  "dependencies": {
+    "cookie-parser": "^1.4.6",
+    "dotenv": "^10.0.0",
+    "express": "^4.17.2",
+    "express-session": "^1.17.2",
+    "mysql2": "^2.3.3",
+    "sequelize": "^7.0.0-alpha.4",
+    "sequelize-cli": "^6.3.0"
+  }
+}
