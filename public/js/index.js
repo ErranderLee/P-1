@@ -1,12 +1,14 @@
 import home from './pages/home.js';
 import signin from './pages/signin.js';
+import post from './pages/post.js';
+import signup from './pages/signup.js';
 
 const router = () => {
     const routes = [
         { path:"/", view: home },
         { path:"/signin", view: signin },
-        // { path:"/signup", view: () => console.log("signup") },
-        // { path:"/post", view: () => console.log("post") }
+        { path:"/signup", view: signup },
+        { path:"/post", view: post }
     ];
     const pageMatches = routes.map((route) => {
         return {
@@ -29,5 +31,9 @@ document.addEventListener("DOMContentLoaded", () => {
     });
     router();
 })
+
+window.addEventListener("popstate", () => {
+    router();
+});
 
 
