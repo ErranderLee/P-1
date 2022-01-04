@@ -1,3 +1,19 @@
 .hidden {
     display: none;
 }
+
+.upper {
+    background-color: blue;
+}
+
+span {
+    color: tomato;
+}
+
+body {
+    width: 600px;
+    margin: 0 auto;
+    background-color: white;
+    padding: 0 20px 500px 20px;
+    border: 2px solid black;
+}
