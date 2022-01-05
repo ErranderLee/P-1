@@ -19,12 +19,15 @@ export default function signup() {
         const loginInput = document.querySelector("form input:first-child");
         const username = loginInput.value;
         form.classList.add("hidden");
-        let result = fetch('/signup', {
+        fetch('/signup', {
             method: 'POST',
             headers: {
                 "Content-Type": "application/json",
             },
             body: JSON.stringify({ username: username })
-        });
+        })
+        .then((res) => res.json())
+        .then((result) => console.log(result))
+        .catch((err) => console.error(err));
     });
 }
