@@ -21,7 +21,13 @@ const router = () => {
     match.route.view();
 }
 
-document.addEventListener("DOMContentLoaded", () => {
+history.pushState = ( f => function pushState(){
+    var ret = f.apply(this, arguments);
+    window.dispatchEvent(new Event('locationchange'));
+    return ret;
+})(history.pushState);
+
+document.addEventListener("DOMContentLoaded", (e) => {
     document.body.addEventListener("click", (event) => {
         if(event.target.matches("a")) {
             event.preventDefault();
@@ -32,8 +38,10 @@ document.addEventListener("DOMContentLoaded", () => {
     router();
 })
 
+window.addEventListener('locationchange', (event) => {
+    router();
+})
+
 window.addEventListener("popstate", () => {
     router();
 });
-
-

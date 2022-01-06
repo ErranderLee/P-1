@@ -1,5 +1,6 @@
+
 export default function signup() {
-    document.title = "Sign In";
+    document.title = "Sign Up";
 
     const upper = document.querySelector(".upper");
     const under = document.querySelector(".under");
@@ -18,7 +19,7 @@ export default function signup() {
         event.preventDefault();
         const loginInput = document.querySelector("form input:first-child");
         const username = loginInput.value;
-        form.classList.add("hidden");
+        // form.classList.add("hidden");
         fetch('/signup', {
             method: 'POST',
             headers: {
@@ -27,7 +28,13 @@ export default function signup() {
             body: JSON.stringify({ username: username })
         })
         .then((res) => res.json())
-        .then((result) => console.log(result))
+        .then((result) => {
+            if(result.success === true) {
+                history.pushState(null, null, "/signin");
+            } else {
+                alert("중복된 아이디 입니다.");
+            }
+        })
         .catch((err) => console.error(err));
     });
 }
