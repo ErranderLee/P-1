@@ -3,6 +3,7 @@ import signin from './pages/signin.js';
 import post from './pages/post.js';
 import signup from './pages/signup.js';
 
+
 const router = () => {
     const routes = [
         { path:"/", view: home },

@@ -43,6 +43,27 @@ app.post("/signin", async (req, res) => {
         res.json(response);
     }
 })
+app.post("/post", async (req,res) => {
+    let username, userid;
+    if(req.body.author !== null) {
+        const user = await User.findOne({ where: { username: req.body.author }});
+        username = user.username;
+        userid = user.userid;
+    } else {
+        username = "익명";
+        userid = null;
+    }
+    
+    const post = Post.create({
+        board: req.body.board,
+        title: req.body.title,
+        content: req.body.content,
+        author: username,
+        UserUserid: userid
+    })
+
+    res.json({ success: true });
+})
 app.listen(3000, () => {
     console.log("Server ON");
 });

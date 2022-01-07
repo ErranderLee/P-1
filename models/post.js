@@ -19,6 +19,10 @@ module.exports = class Post extends Model {
             content: {
                 type: DataTypes.TEXT,
                 allowNull: true
+            },
+            author: {
+                type: DataTypes.STRING(30),
+                allowNull: true,
             }
         }, {
             sequelize,
