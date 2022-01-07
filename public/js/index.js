@@ -17,14 +17,13 @@ const router = () => {
         };
     });
     let match = pageMatches.find((pageMatch) => pageMatch.isMatch);
-
-    match.route.view();
+    const username = JSON.parse(window.sessionStorage.getItem('authenticatedUser'));
+    match.route.view(username);
 }
 
 history.pushState = ( f => function pushState(){
-    var ret = f.apply(this, arguments);
+    f.apply(this, arguments);
     window.dispatchEvent(new Event('locationchange'));
-    return ret;
 })(history.pushState);
 
 document.addEventListener("DOMContentLoaded", (e) => {
@@ -38,7 +37,7 @@ document.addEventListener("DOMContentLoaded", (e) => {
     router();
 })
 
-window.addEventListener('locationchange', (event) => {
+window.addEventListener('locationchange', () => {
     router();
 })
 

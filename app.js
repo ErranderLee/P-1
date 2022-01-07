@@ -31,8 +31,17 @@ app.post("/signup", async (req, res) => {
         res.json(response);
     }
 })
-app.post("/signin", (req, res) => {
-
+app.post("/signin", async (req, res) => {
+    const inputUserName = req.body.username;
+    const temp = await User.findOne({ where: { username: inputUserName} });
+    
+    if(temp !== null) {
+        const response = { success: true, msg: "로그인 성공" };
+        res.json(response);
+    } else {
+        const response = { success: false, msg:"존재하지 않는 아이디 입니다." };
+        res.json(response);
+    }
 })
 app.listen(3000, () => {
     console.log("Server ON");

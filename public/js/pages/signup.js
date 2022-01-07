@@ -1,5 +1,5 @@
 
-export default function signup() {
+export default function signup(username) {
     document.title = "Sign Up";
 
     const upper = document.querySelector(".upper");
@@ -32,7 +32,7 @@ export default function signup() {
             if(result.success === true) {
                 history.pushState(null, null, "/signin");
             } else {
-                alert("중복된 아이디 입니다.");
+                alert(result.msg);
             }
         })
         .catch((err) => console.error(err));
