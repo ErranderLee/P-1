@@ -3,6 +3,8 @@ const path = require('path');
 const app = express();
 const dotenv = require('dotenv');
 const { sequelize, User, Post } = require('./models');
+const url = require('url');
+const querystring = require('querystring');
 
 sequelize.sync({ force : false })
     .then(() => {
@@ -15,9 +17,13 @@ app.use(express.static(path.join(__dirname, 'public')));
 // app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
-app.get("/*", (req, res) => {
-    res.sendFile(path.resolve("public", "index.html"));
+app.get('/post', async (req, res) => {
+    const path = url.parse(req.url).query;
+    const param = querystring.parse(path);
+    const posts = await Post.findAll({ where: { board: param.board } });
+    res.json({ posts: posts });
 });
+
 app.post("/signup", async (req, res) => {
     const inputUserName = req.body.username;
     const temp = await User.findOne({ where: { username: inputUserName} });
@@ -30,7 +36,8 @@ app.post("/signup", async (req, res) => {
         const response = { success: false, msg:"중복된 아이디 입니다." };
         res.json(response);
     }
-})
+});
+
 app.post("/signin", async (req, res) => {
     const inputUserName = req.body.username;
     const temp = await User.findOne({ where: { username: inputUserName} });
@@ -42,7 +49,8 @@ app.post("/signin", async (req, res) => {
         const response = { success: false, msg:"존재하지 않는 아이디 입니다." };
         res.json(response);
     }
-})
+});
+
 app.post("/post", async (req,res) => {
     let username, userid;
     if(req.body.author !== null) {
@@ -63,7 +71,12 @@ app.post("/post", async (req,res) => {
     })
 
     res.json({ success: true });
-})
+});
+
+app.get("/*", (req, res) => {
+    res.sendFile(path.resolve("public", "index.html"));
+});
+
 app.listen(3000, () => {
     console.log("Server ON");
 });

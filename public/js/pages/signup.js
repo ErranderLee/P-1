@@ -1,5 +1,5 @@
 
-export default function signup(username) {
+export default function signup(innerHTML) {
     document.title = "Sign Up";
 
     const upper = document.querySelector(".upper");

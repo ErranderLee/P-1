@@ -1,4 +1,4 @@
-export default function signin(username) {
+export default function signin(innerHTML) {
     document.title = "Sign In";
 
     const upper = document.querySelector(".upper");

@@ -1,21 +1,10 @@
-export default function post(username) {
+export default function post(innerHTML) {
     document.title = "글 등록";
 
     const upper = document.querySelector(".upper");
     const under = document.querySelector(".under");
     
-    if(username) {
-        upper.innerHTML = `<h2>AJOU Memo</h2>
-        <span class="signin"></span>`;
-        const signIn = document.querySelector("span");
-        const loginUser = document.createElement("p");
-        loginUser.innerText = username;
-        signIn.appendChild(loginUser);
-    } else {
-        upper.innerHTML = `<h2>AJOU Memo</h2>
-        <span class="signin"><a href="/signin">Log In</a></span>`;
-    }
-
+    upper.innerHTML = innerHTML.upperInnerHTML;
     under.innerHTML = `<form>
         <select id="board" required>
             <option value="" disabled selected hidden>게시판을 선택해 주세요.</option>
@@ -30,6 +19,7 @@ export default function post(username) {
         <input type="submit" value="글쓰기" />  
     </form>`;
 
+    const username = innerHTML.username;
     const form = document.querySelector("form");
     const boardInput = document.querySelector("form #board");
     const titleInput = document.querySelector("form #title");
