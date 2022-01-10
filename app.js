@@ -23,6 +23,24 @@ app.get('/post', async (req, res) => {
     const posts = await Post.findAll({ where: { board: param.board } });
     res.json({ posts: posts });
 });
+app.put('/post', async (req, res) => {
+    const path = url.parse(req.url).query;
+    const param = querystring.parse(path);
+    Post.update({
+        board: req.body.board,
+        title: req.body.title,
+        content: req.body.content
+     }, { where:{ postid: param.postid } })
+     
+     res.json({ success:true });
+});
+app.delete('/post', async (req, res) => {
+    const path = url.parse(req.url).query;
+    const param = querystring.parse(path);
+    Post.destroy({ where: { postid: param.postid } });
+
+    res.json({ success:true });
+});
 
 app.post("/signup", async (req, res) => {
     const inputUserName = req.body.username;
