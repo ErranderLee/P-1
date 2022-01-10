@@ -1,19 +1,25 @@
 .hidden {
     display: none;
 }
-
-.upper {
+#upper {
     background-color: blue;
 }
-
-span {
-    color: tomato;
+.sidebutton {
+    position: relative;
+    left: 30px;
+    top: 30px;
 }
-
-body {
-    width: 600px;
-    margin: 0 auto;
-    background-color: white;
-    padding: 0 20px 500px 20px;
-    border: 2px solid black;
+.title {
+    position: relative;
+    left: 100px;
+    bottom: 20px;
+}
+.signin {
+    position: relative;
+    right: -500px;
+    bottom: 60px;
+}
+.sidebar {
+    background-color: #CFDAFF; 
+    left: 30px;
 }

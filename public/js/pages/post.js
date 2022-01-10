@@ -1,10 +1,8 @@
-export default function post(innerHTML) {
+export default function post(username) {
     document.title = "글 등록";
 
-    const upper = document.querySelector(".upper");
-    const under = document.querySelector(".under");
-    
-    upper.innerHTML = innerHTML.upperInnerHTML;
+    const under = document.createElement("div");
+    under.id = "under";
     under.innerHTML = `<form>
         <select id="board" required>
             <option value="" disabled selected hidden>게시판을 선택해 주세요.</option>
@@ -18,8 +16,12 @@ export default function post(innerHTML) {
         <input type="text" id=content placeholder="내용" required />
         <input type="submit" value="글쓰기" />  
     </form>`;
+    const prevunder = document.querySelector("#under");
+    if(prevunder) {
+        document.body.removeChild(prevunder);
+    }
+    document.body.appendChild(under);
 
-    const username = innerHTML.username;
     const form = document.querySelector("form");
     const boardInput = document.querySelector("form #board");
     const titleInput = document.querySelector("form #title");
@@ -43,6 +45,7 @@ export default function post(innerHTML) {
         .then((result) => {
             if(result.success) {
                 history.pushState(null, null, '/');
+                window.dispatchEvent(new Event('locationchange'));
             }
         });
     });

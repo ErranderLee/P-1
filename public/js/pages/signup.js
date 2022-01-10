@@ -1,18 +1,19 @@
 
-export default function signup(innerHTML) {
+export default function signup(username) {
     document.title = "Sign Up";
 
-    const upper = document.querySelector(".upper");
-    const under = document.querySelector(".under");
-
-    upper.innerHTML = `<h2>AJOU Memo</h2>
-    <span class="signin"><a href="/signin">Log In</a></span>`;
-
+    const under = document.createElement("div");
+    under.id = "under";
     under.innerHTML = `<form>
         <input type="text" placeholder="아이디를 입력하세요" required/>
         <input type="submit" value="회원가입">
     </form>
     <a href="/">나가기</a>`;
+    const prevunder = document.querySelector("#under");
+    if(prevunder) {
+        document.body.removeChild(prevunder);
+    }
+    document.body.appendChild(under);
 
     const form = document.querySelector("form");
     form.addEventListener("submit", (event) => {
@@ -31,6 +32,7 @@ export default function signup(innerHTML) {
         .then((result) => {
             if(result.success === true) {
                 history.pushState(null, null, "/signin");
+                window.dispatchEvent(new Event('locationchange'));
             } else {
                 alert(result.msg);
             }
