@@ -9,7 +9,10 @@ import signup from './pages/signup.js';
 
 const router = () => {
     const routes = [
-        { path:"/", view: freeboard },
+        { path:"/", view: () => {
+            history.pushState(null, null, '/freeboard');
+            window.dispatchEvent(new Event('locationchange'));
+        } },
         { path:"/freeboard", view: freeboard },
         { path:"/infoboard", view: infoboard },
         { path:"/prboard", view: prboard },

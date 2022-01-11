@@ -1,9 +1,9 @@
-export default function modifypost(under, post) {
-    // history.pushState(null, null, `/modifypost?postid=${post.postid}`);
+export default function modifypost(post) {
+    const under = document.querySelector(".under");
     under.innerHTML = 
-    `<div id="detailpost">
+    `<div class="detailpost">
         <form>
-            <select id="board" required>
+            <select class="selectboard" required>
                 <option value="" disabled selected hidden>게시판을 선택해 주세요.</option>
                 <option value="자유 게시판">자유 게시판</option>
                 <option value="비밀 게시판">비밀 게시판</option>
@@ -11,16 +11,16 @@ export default function modifypost(under, post) {
                 <option value="홍보 게시판">홍보 게시판</option>
                 <option value="SW 게시판">SW 게시판</option>
             </select>
-            <input type="text" id=title placeholder="제목을 입력해 주세요" value=${post.title} required />
-            <input type="text" id=content placeholder="내용" value=${post.content} required />
+            <input type="text" class=title placeholder="제목을 입력해 주세요" value=${post.title} required />
+            <input type="text" class=content placeholder="내용" value=${post.content} required />
             <button>수정하기</button>  
         </form>
     </div>`
 
     const form = document.querySelector("form");
-    const boardInput = document.querySelector("form #board");
-    const titleInput = document.querySelector("form #title");
-    const contentInput = document.querySelector("form #content");
+    const boardInput = document.querySelector("form .selectboard");
+    const titleInput = document.querySelector("form .title");
+    const contentInput = document.querySelector("form .content");
 
     form.addEventListener('submit', (event) => {
         event.preventDefault();
