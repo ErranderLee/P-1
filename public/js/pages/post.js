@@ -14,7 +14,7 @@ export default function post(username) {
         </select>
         <input type="text" class=title placeholder="제목을 입력해 주세요" required />
         <input type="text" class=content placeholder="내용" required />
-        <input type="submit" value="글쓰기" />  
+        <input type="submit" class=post_submit value="글쓰기" />  
     </form>`;
     const prevunder = document.querySelector(".under");
     if(prevunder) {

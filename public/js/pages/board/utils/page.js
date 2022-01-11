@@ -22,7 +22,7 @@ export default function page(pageNum, posts, numPostsPerPage) {
     let pageList = document.createElement('ul');
     pageList.classList.add("pagelist");
     pageList.insertAdjacentHTML('beforeend', Array(totalPageNum).fill().map((element, index)=>
-        `<li id="${index+1}" class="pagebutton">${index+1}</li>`));
+        `<li id="${index+1}" class="pagebutton">${index+1}</li>`).join(''));
     under.appendChild(pageList);
     
     const prevunder = document.querySelector(".under");

@@ -2,7 +2,7 @@ export default function modifypost(post) {
     const under = document.querySelector(".under");
     under.innerHTML = 
     `<div class="detailpost">
-        <form>
+        <form class="form_post">
             <select class="selectboard" required>
                 <option value="" disabled selected hidden>게시판을 선택해 주세요.</option>
                 <option value="자유 게시판">자유 게시판</option>
@@ -13,7 +13,7 @@ export default function modifypost(post) {
             </select>
             <input type="text" class=title placeholder="제목을 입력해 주세요" value=${post.title} required />
             <input type="text" class=content placeholder="내용" value=${post.content} required />
-            <button>수정하기</button>  
+            <button class=post_submit>수정하기</button>  
         </form>
     </div>`
 

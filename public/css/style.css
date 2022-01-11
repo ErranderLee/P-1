@@ -1,31 +1,29 @@
 .hidden {
     display: none;
 }
-/* #upper {
-    position: absolute;
-    width: 501px;
-    height: 60px;
-    left: 0px;
-    top: 0px;
-
+.upper {
     background: #045D8B;
 }
-.sidebutton {
-    position: static;
-    left: 12.5%;
-    right: 12.5%;
-    top: 75%;
-    bottom: 25%;
+.signin {
+    position: relative;
+    width: 45px;
+    height: 21px;
+    left: 448px;
+    top: -25px;
+
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 16px;
+    display: flex;
+    align-items: center;
+    text-align: center;
     
-    border: 2px solid #FFFFFF;
-    
-    flex: none;
-    order: 2;
-    flex-grow: 0;
-    margin: 6px 0px;
+    color: #FFFFFF;
 }
-.title {
-    position: absolute;
+.headertitle {
+    position: relative;
     width: 161px;
     height: 48px;
     left: 183px;
@@ -40,111 +38,160 @@
     align-items: center;
     text-align: center;
     
-    color: #FFFFFF;
+    color: #FFFFFF;    
 }
-.signin {
-    position: absolute;
+.sidebutton {
+    position: relative;
     width: 45px;
     height: 21px;
-    left: 448px;
-    top: 20px;
+    left: 10px;
+    top: 40px;
     
-    font-family: Roboto;
-    font-style: normal;
-    font-weight: normal;
-    font-size: 14px;
-    line-height: 16px;
-    display: flex;
-    align-items: center;
-    text-align: center;
-    
-    color: #FFFFFF;
+    border: 2px solid #FFFFFF;
 }
 .menu {
     position: absolute;
-    width: 129px;
-    height: 274px;
-    left: 23px;
-    top: 76px;
-
+    width: 100px;
+    height: 564px;
+    left: -1px;
+    top: 60px;
+    
+    background: #CFDAFF;
+}
+.post {
+    position: absolute;
+    width: 60px;
+    height: 21px;
+    left: 500px;
+    top: 101px;
+    
     font-family: Roboto;
     font-style: normal;
     font-weight: normal;
     font-size: 14px;
     line-height: 16px;
-
-    align-items: center;
-    text-align: center;
-
-    color: #000000;
-
-}
-
-#post {
-    position: absolute;
-    width: 55px;
-    height: 21px;
-    left: 370px;
-    top: 101px;
-
-    font-family: Roboto;
-    font-style: normal;
-    font-weight: normal;
-    font-size: 13px;
-    line-height: 16px;
     display: flex;
     align-items: center;
     text-align: center;
-
+    
     color: #000000;
 }
-#posts {
+.posts {
     position: absolute;
     width: 350px;
     height: 359px;
-    left: 75px;
+    left: 200px;
     top: 146px;
     
     background: #FFFFFF;
     border: 1px solid #045D8B;
     box-sizing: border-box;
     border-radius: 10px;
+    list-style: none;
 }
-#detailpost {
+.pagelist {
+    position: absolute;
+    width: 350px;
+    height: 359px;
+    left: 200px;
+    top: 530px;
+
+    list-style: none;
+    margin-left: auto;
+    margin-right: auto;
+}
+.pagelist li {
+    float: left;
+    margin: 20px;
+}
+
+.form_post {
     position: absolute;
     width: 391px;
     height: 465px;
-    left: 57px;
-    top: 94px;
+    left: 150px;
+    top: 150px;
     
     background: #FFFFFF;
     border: 1px solid #045D8B;
     box-sizing: border-box;
     border-radius: 10px;
 }
-#form_post {
+.selectboard {
     position: absolute;
-    width: 391px;
-    height: 465px;
-    left: 57px;
-    top: 94px;
+    width: 340px;
+    height: 46px;
+    left: 30px;
+    top: 10px;
     
-    background: #FFFFFF;
-    border: 1px solid #045D8B;
-    box-sizing: border-box;
-    border-radius: 10px;
-}
-#form_sign {
-    position: absolute;
-    width: 331px;
-    height: 83px;
-    left: 87px;
-    top: 152px;
-    
-    background: #FFFFFF;
-    border: 1px solid #045D8B;
+    border: 1px solid #000000;
     box-sizing: border-box;
 }
-.sidebar {
+.title {
+    position: absolute;
+    width: 334px;
+    height: 46px;
+    left: 30px;
+    top: 60px;
+}
+.content {
+    position: absolute;
+    width: 334px;
+    height: 300px;
+    left: 30px;
+    top: 120px;
+}
+.post_submit {
+    position: absolute;
+    width: 50px;
+    height: 21px;
+    left: 340px;
+    top: 480px;
     
-} */
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 10px;
+    line-height: 16px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    
+    color: #000000;
+}
+.modify {
+    position: absolute;
+    width: 50px;
+    height: 21px;
+    left: 340px;
+    top: 480px;
+    
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 10px;
+    line-height: 16px;
+
+    align-items: center;
+    text-align: center;
+    
+    color: #000000;
+}
+.delete {
+    position: absolute;
+    width: 50px;
+    height: 21px;
+    left: 340px;
+    top: 480px;
+    
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 10px;
+    line-height: 16px;
+
+    align-items: center;
+    text-align: center;
+    
+    color: #000000;
+}
