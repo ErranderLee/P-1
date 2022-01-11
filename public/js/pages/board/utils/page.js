@@ -22,9 +22,9 @@ export default function page(pageNum, posts, numPostsPerPage) {
     let pageList = document.createElement('ul');
     pageList.classList.add("pagelist");
     pageList.insertAdjacentHTML('beforeend', Array(totalPageNum).fill().map((element, index)=>
-        `<li class="pagebutton">${index+1}</li>`));
+        `<li id="${index+1}" class="pagebutton">${index+1}</li>`));
     under.appendChild(pageList);
-
+    
     const prevunder = document.querySelector(".under");
 
     if(prevunder) {
@@ -32,11 +32,20 @@ export default function page(pageNum, posts, numPostsPerPage) {
     }
     document.body.appendChild(under);
 
-    const lis = document.querySelectorAll(".posts li");
-    lis.forEach((li) => {
+    const postslis = document.querySelectorAll(".posts li");
+    postslis.forEach((li) => {
         li.addEventListener('click', () => {
             history.pushState(null, null, `${location.pathname}?page=1&postid=${li.id}`);
             window.dispatchEvent(new Event('locationchange'));
         })
     })
+
+    const pagelis = document.querySelectorAll(".pagelist li");
+    pagelis.forEach((li) => {
+        console.log(li);
+        li.addEventListener('click', () => {
+            history.pushState(null, null, `${location.pathname}?page=${li.id}`);
+            window.dispatchEvent(new Event('locationchange'));  
+        });
+    });
 }
