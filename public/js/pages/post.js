@@ -3,7 +3,7 @@ export default function post(username) {
 
     const under = document.createElement("div");
     under.id = "under";
-    under.innerHTML = `<form>
+    under.innerHTML = `<form id="form_post">
         <select id="board" required>
             <option value="" disabled selected hidden>게시판을 선택해 주세요.</option>
             <option value="자유 게시판">자유 게시판</option>

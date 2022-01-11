@@ -1,7 +1,8 @@
+import deletepost from "./deletepost.js";
 import modifypost from "./modifypost.js";
 
 export default function detailpost(under, post) {
-    history.pushState(null, null, `/${document.title}/${post.postid}`)
+    history.pushState(null, null, `/${document.title}/${post.postid}`);
     under.innerHTML = `<div id="detailpost">
         <span id="board">${post.board}</span>
         <span id="author">${post.author}</span>
@@ -12,24 +13,11 @@ export default function detailpost(under, post) {
     </div>`
 
     const modifyBtn = document.querySelector("#modify");
+    // 변수명 : handleModify 동사형으로
     const deleteBtn = document.querySelector("#delete");
 
-    modifyBtn.addEventListener('click', () => {
-        modifypost(under, post);
-    })
-    deleteBtn.addEventListener('click', () => {
-        const confirm = window.confirm("삭제하시겠습니까?");
-        if (confirm) {
-            fetch(`/post?postid=${post.postid}`, {
-                method: 'DELETE'
-            })
-            .then((res) => res.json())
-            .then((result) => {
-                if (result.success) {
-                    history.pushState(null, null, '/');
-                    window.dispatchEvent(new Event('locationchange'));
-                }
-            })
-        }
-    })
+    modifyBtn.addEventListener('click', () => modifypost(under, post));
+    // 화살표 함수 : 즉시실행 함수임.
+
+    deleteBtn.addEventListener('click', () => deletepost(post));
 }

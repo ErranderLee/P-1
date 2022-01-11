@@ -1,25 +1,150 @@
 .hidden {
     display: none;
 }
-#upper {
-    background-color: blue;
+/* #upper {
+    position: absolute;
+    width: 501px;
+    height: 60px;
+    left: 0px;
+    top: 0px;
+
+    background: #045D8B;
 }
 .sidebutton {
-    position: relative;
-    left: 30px;
-    top: 30px;
+    position: static;
+    left: 12.5%;
+    right: 12.5%;
+    top: 75%;
+    bottom: 25%;
+    
+    border: 2px solid #FFFFFF;
+    
+    flex: none;
+    order: 2;
+    flex-grow: 0;
+    margin: 6px 0px;
 }
 .title {
-    position: relative;
-    left: 100px;
-    bottom: 20px;
+    position: absolute;
+    width: 161px;
+    height: 48px;
+    left: 183px;
+    top: 6px;
+    
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 16px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    
+    color: #FFFFFF;
 }
 .signin {
-    position: relative;
-    right: -500px;
-    bottom: 60px;
+    position: absolute;
+    width: 45px;
+    height: 21px;
+    left: 448px;
+    top: 20px;
+    
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 16px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    
+    color: #FFFFFF;
+}
+.menu {
+    position: absolute;
+    width: 129px;
+    height: 274px;
+    left: 23px;
+    top: 76px;
+
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 16px;
+
+    align-items: center;
+    text-align: center;
+
+    color: #000000;
+
+}
+
+#post {
+    position: absolute;
+    width: 55px;
+    height: 21px;
+    left: 370px;
+    top: 101px;
+
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 13px;
+    line-height: 16px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+
+    color: #000000;
+}
+#posts {
+    position: absolute;
+    width: 350px;
+    height: 359px;
+    left: 75px;
+    top: 146px;
+    
+    background: #FFFFFF;
+    border: 1px solid #045D8B;
+    box-sizing: border-box;
+    border-radius: 10px;
+}
+#detailpost {
+    position: absolute;
+    width: 391px;
+    height: 465px;
+    left: 57px;
+    top: 94px;
+    
+    background: #FFFFFF;
+    border: 1px solid #045D8B;
+    box-sizing: border-box;
+    border-radius: 10px;
+}
+#form_post {
+    position: absolute;
+    width: 391px;
+    height: 465px;
+    left: 57px;
+    top: 94px;
+    
+    background: #FFFFFF;
+    border: 1px solid #045D8B;
+    box-sizing: border-box;
+    border-radius: 10px;
+}
+#form_sign {
+    position: absolute;
+    width: 331px;
+    height: 83px;
+    left: 87px;
+    top: 152px;
+    
+    background: #FFFFFF;
+    border: 1px solid #045D8B;
+    box-sizing: border-box;
 }
 .sidebar {
-    background-color: #CFDAFF; 
-    left: 30px;
-}
+    
+} */

@@ -1,5 +1,5 @@
 export default function modifypost(under, post) {
-    history.pushState(null, null, `/modifypost?postid=${post.postid}`);
+    // history.pushState(null, null, `/modifypost?postid=${post.postid}`);
     under.innerHTML = 
     `<div id="detailpost">
         <form>

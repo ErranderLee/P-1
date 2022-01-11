@@ -4,7 +4,7 @@ export default function signup(username) {
 
     const under = document.createElement("div");
     under.id = "under";
-    under.innerHTML = `<form>
+    under.innerHTML = `<form id="form_sign">
         <input type="text" placeholder="아이디를 입력하세요" required/>
         <input type="submit" value="회원가입">
     </form>
