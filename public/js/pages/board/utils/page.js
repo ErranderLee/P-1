@@ -9,10 +9,10 @@ export default function page(pageNum, posts, numPostsPerPage) {
 
     let postsHTML = document.createElement('ul');
     postsHTML.classList.add("posts");
-
+    
     postsHTML.insertAdjacentHTML('beforeend', postsToDisplay.map((post,id)=>
         `<li id=${id + (pageNum - 1) * numPostsPerPage}>
-        <span id=createAt>${post.createdAt}</span>
+        <span id=createAt>${post.createdAt.slice(5,10).replace('-', '/')}</span>
         <span id=content>${post.content}</span>
         <span id=author>${post.author}</span>
         </li>`

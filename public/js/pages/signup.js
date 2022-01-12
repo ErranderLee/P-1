@@ -3,13 +3,13 @@ export default function signup(username) {
     document.title = "Sign Up";
 
     const under = document.createElement("div");
-    under.id = "under";
-    under.innerHTML = `<form id="form_sign">
+    under.classList.add("under");
+    under.innerHTML = `<form class="form_sign">
         <input type="text" placeholder="아이디를 입력하세요" required/>
         <input type="submit" value="회원가입">
     </form>
-    <a href="/">나가기</a>`;
-    const prevunder = document.querySelector("#under");
+    <a class="exit" href="/">나가기</a>`;
+    const prevunder = document.querySelector(".under");
     if(prevunder) {
         document.body.removeChild(prevunder);
     }

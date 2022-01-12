@@ -3,10 +3,10 @@ import deletepost from "./deletepost.js";
 export default function detailpost(post) {
     const under = document.querySelector(".under");
     under.innerHTML = `<div class="detailpost">
-        <span id="board">${post.board}</span>
-        <span id="author">${post.author}</span>
-        <span id="title">${post.title}</span>
-        <span id="content">${post.content}</span>
+        <span class="board">${post.board}</span>
+        <span class="author">${post.author}</span>
+        <span class="title">${post.title}</span>
+        <span class="content">${post.content}</span>
         <button class="modify">수정하기</button>
         <button class="delete">삭제하기</button>
     </div>`
