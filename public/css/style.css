@@ -62,10 +62,34 @@ li {
     position: absolute;
     width: 100px;
     height: 564px;
-    left: -1px;
-    top: 60px;
+    left: 8px;
+    top: 85px;
     
     background: #CFDAFF;
+}
+.menu li {
+    position: relative;
+    width: 100px;
+    left: -20px;
+    margin: 20px;
+}
+.board {
+    position: absolute;
+    width: 80px;
+    height: 21px;
+    left: 200px;
+    top: 101px;
+    
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 16px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    
+    color: #000000;    
 }
 .post {
     position: absolute;
@@ -83,6 +107,7 @@ li {
     align-items: center;
     text-align: center;
     
+    border: 1px solid blue;
     color: #000000;
 }
 .posts {
@@ -115,6 +140,11 @@ li {
     text-align: center;
     margin-top: auto;
     margin-bottom: auto;
+
+    display:inline-block;
+    overflow:hidden;
+    text-overflow:ellipsis;
+    white-space:nowrap;
 }
 .pagelist {
     position: absolute;
@@ -161,7 +191,8 @@ li {
     left: 150px;
     top: 10px;
     
-    background: #045D8B;    
+    background: #045D8B;  
+    border: 1px solid black;  
 }
 .signup {
     position: absolute;
@@ -170,8 +201,11 @@ li {
     left: 150px;
     top: 260px;
     
+    align-items: center;
     text-align: center;
     background: #045D8B;
+
+    border: 1px solid black;
 }
 .exit {
     position: absolute;
@@ -180,8 +214,11 @@ li {
     left: 150px;
     top: 260px;
     
+    align-items: center;
     text-align: center;
     background: #045D8B;
+
+    border: 1px solid black;
 }
 .form_post, .detailpost {
     position: absolute;
@@ -194,6 +231,13 @@ li {
     border: 1px solid #045D8B;
     box-sizing: border-box;
     border-radius: 10px;
+}
+.detailpost .board {
+    position: absolute;
+    width: 340px;
+    height: 46px;
+    left: 30px;
+    top: -13px;
 }
 .selectboard {
     position: absolute;

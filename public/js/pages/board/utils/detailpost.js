@@ -2,7 +2,7 @@ import deletepost from "./deletepost.js";
 
 export default function detailpost(post) {
     const under = document.querySelector(".under");
-    under.innerHTML = `<div class="detailpost">
+    const html = `<div class="detailpost">
         <span class="board">${post.board}</span>
         <span class="author">${post.author}</span>
         <span class="title">${post.title}</span>
@@ -10,6 +10,13 @@ export default function detailpost(post) {
         <button class="modify">수정하기</button>
         <button class="delete">삭제하기</button>
     </div>`
+    if(under === null) {
+        const under = document.createElement("div");
+        under.classList.add("under");
+        under.innerHTML = html;
+        document.body.appendChild(under);
+    }
+    else under.innerHTML = html;
 
     const modifyBtn = document.querySelector(".modify");
     // 변수명 : handleModify 동사형으로

@@ -1,15 +1,17 @@
 
-export default function page(pageNum, posts, numPostsPerPage) {
+export default function page(pageNum, posts, numPostsPerPage, title) {
     const totalPageNum = Math.ceil(posts.length / numPostsPerPage);
     const postsToDisplay = posts.slice((pageNum - 1) * numPostsPerPage, (pageNum * numPostsPerPage));
     
     const under = document.createElement("div");
     under.classList.add("under");
-    under.innerHTML = `<a class=post href="/post">등록하기</a>`;
+    under.innerHTML = `
+    <span class=board>${title}</span>
+    <a class=post href="/post">등록하기</a>`;
 
     let postsHTML = document.createElement('ul');
     postsHTML.classList.add("posts");
-    
+
     postsHTML.insertAdjacentHTML('beforeend', postsToDisplay.map((post,id)=>
         `<li id=${id + (pageNum - 1) * numPostsPerPage}>
         <span id=createAt>${post.createdAt.slice(5,10).replace('-', '/')}</span>

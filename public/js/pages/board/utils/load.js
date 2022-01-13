@@ -14,7 +14,7 @@ export default async function load(title) {
     
     if (Object.keys(params).length === 1) {
         const pageNum = params.page;
-        page(pageNum, posts, numPostsPerPage);
+        page(pageNum, posts, numPostsPerPage, title);
     } else if (Object.keys(params).length === 2) {
         const post = posts[params.postid];
         detailpost(post);

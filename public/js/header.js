@@ -7,7 +7,7 @@ const Notice = [
 ]
 document.body.innerHTML = `<div class="upper">
     <span class="sidebutton"><button>side</button></span>
-    <span class="headertitle"><h2>AJOU Meomo</h2></span>
+    <span class="headertitle"><h2>AJOU Memo</h2></span>
     <span class="signin"><a href="/signin">Log In</a></span>
 </div>
 <div class="sidebar hidden">

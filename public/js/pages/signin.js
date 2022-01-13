@@ -7,12 +7,18 @@ export default function signin(username) {
         <input type="text" placeholder="아이디를 입력하세요" required/>
         <input type="submit" value="로그인">
     </form>
-    <a class="signup" href="/signup">회원가입</a>`;
+    <input type="submit" class="signup" value="회원가입">`;
     const prevunder = document.querySelector(".under");
     if(prevunder) {
         document.body.removeChild(prevunder);
     }
     document.body.appendChild(under);
+
+    const signUp = document.querySelector(".signup");
+    signUp.addEventListener('click', () => {
+        history.pushState(null, null, '/signup');
+        window.dispatchEvent(new Event('locationchange'));
+    })
 
     const form = document.querySelector("form");
     form.addEventListener("submit", (event) => {
