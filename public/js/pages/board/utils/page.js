@@ -7,7 +7,7 @@ export default function page(pageNum, posts, numPostsPerPage, title) {
     under.classList.add("under");
     under.innerHTML = `
     <span class=board>${title}</span>
-    <a class=post href="/post">등록하기</a>`;
+    <a class=post href="/register">등록하기</a>`;
 
     let postsHTML = document.createElement('ul');
     postsHTML.classList.add("posts");

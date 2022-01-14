@@ -20,7 +20,7 @@ const router = () => {
         { path:"/swboard", view: swboard },
         { path:"/signin", view: signin },
         { path:"/signup", view: signup },
-        { path:"/post", view: post }
+        { path:"/register", view: post }
     ];
     const pageMatches = routes.map((route) => {
         return {
