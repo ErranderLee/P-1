@@ -6,7 +6,13 @@ const Notice = [
     {href:'/swboard',title:'SW게시판'},
 ]
 document.body.innerHTML = `<div class="upper">
-    <span class="sidebutton"><button>side</button></span>
+    <span class="sidebutton">
+        <div id="line-wrapper">
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+        </div>
+    </span>
     <span class="headertitle"><h2>AJOU Memo</h2></span>
     <span class="signin"><a href="/signin">Log In</a></span>
 </div>

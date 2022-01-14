@@ -51,12 +51,28 @@ li {
 }
 .sidebutton {
     position: relative;
-    width: 45px;
-    height: 21px;
-    left: 10px;
-    top: 40px;
-    
-    border: 2px solid #FFFFFF;
+    width: 30px;
+    height: 30px;
+    left: -10px;
+    top: -10px;
+}
+#line-wrapper {
+    cursor:pointer;
+    width:30px;
+    height:30px;
+    position:relative;
+    top:52.5px;
+    left:47px;
+}
+.line {
+    background:#ffffff;
+    margin-top:6px;
+    margin-bottom:6px;
+    width:30px;
+    height:6px; 
+    border-radius:2px;
+    box-shadow:0 1px 3px rgba(0,0,0,.5);
+    position:relative;
 }
 .menu {
     position: absolute;
@@ -78,7 +94,7 @@ li {
     width: 80px;
     height: 21px;
     left: 200px;
-    top: 101px;
+    top: 115px;
     
     font-family: Roboto;
     font-style: normal;
@@ -96,7 +112,7 @@ li {
     width: 60px;
     height: 21px;
     left: 500px;
-    top: 101px;
+    top: 115px;
     
     font-family: Roboto;
     font-style: normal;
